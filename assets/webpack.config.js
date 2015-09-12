@@ -19,10 +19,12 @@ var plugins = [
     allChunks: true
   })
 ];
+
 if (process.env.DEVELOPMENT === "true") {
   plugins.push(new webpack.HotModuleReplacementPlugin());
   plugins.push(new webpack.NoErrorsPlugin());
 };
+
 
 // Configure webpack output
 var output = {
@@ -31,6 +33,7 @@ var output = {
   // Generate hashed names for production
   filename: "[name].js"
 };
+
 if (process.env.DEVELOPMENT === "true") {
   output.publicPath = ASSETS_URL + "/assets/";
 };
@@ -40,6 +43,7 @@ module.exports = {
   entry: fs.readdirSync(TARGETS).reduce(createEntries, {}),
   output: output,
   plugins: plugins,
+  
   module: {
     preLoaders: [
       {
@@ -62,6 +66,7 @@ module.exports = {
         test: /\.html$/,
         loader: 'html-loader'
       },
+      
       {
         test: /\.scss$/,
         loader: ExtractTextPlugin.extract("style-loader", "css-loader?-minimize!autoprefixer-loader!sass-loader")
@@ -80,6 +85,7 @@ module.exports = {
     eqnull: true,
     failOnHint: false
   }
+
 };
 
 function isDirectory(dir) {

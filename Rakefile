@@ -48,6 +48,7 @@ namespace :assets do
 
     # remove fingerprint on running precompiled assets
     %w(components docs injection).each do |asset|
+      # Gary
       system "mv #{build_dir}/assets/#{asset}*.css #{build_dir}/assets/#{asset}.css"
       system "mv #{build_dir}/assets/#{asset}*.js #{build_dir}/assets/#{asset}.js"
     end

@@ -1,3 +1,7 @@
+# Hack
+NOTE: The hack is to generate full souce of javascirpt and css file. i.e. without any minificaiton
+The trick is in package.json file. Where you remove -p option "node_modules/.bin/webpack --config ./assets/webpack.config.js -p"
+
 # Unimelb Design System
 
 ## Copyright Notice

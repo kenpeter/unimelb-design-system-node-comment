@@ -52,7 +52,9 @@
   "scripts": {
     "clean": "rm -rf ./assets/build/*",
     "start": "DEVELOPMENT=true node ./assets/server.js",
-    "build": "node_modules/.bin/webpack --config ./assets/webpack.config.js -p",
+    "//" : "Gary: orig command line: node_modules/.bin/webpack --config ./assets/webpack.config.js -p",
+    "//" : "-p means production minimized", 
+    "build": "node_modules/.bin/webpack --config ./assets/webpack.config.js",
     "precompile": "node ./assets/precompile.js",
     "build-production": "npm run clean && npm run build && npm run precompile"
   },
